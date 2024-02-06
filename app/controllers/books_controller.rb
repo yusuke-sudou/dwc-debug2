@@ -32,6 +32,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "You have updated book successfully."
     else
+      flash[:notice] = "投稿に失敗しました"
       render "edit"
     end
   end
